@@ -165,13 +165,13 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .cd-dot{width:3px;height:3px;background:var(--sage);border-radius:50%}
 
 /* ── FAMILIARES ── */
-.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-.fam-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:24px 14px;text-align:center;position:relative}
+.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;align-items:stretch}
+.fam-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:26px 14px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px}
 .fam-card::before{content:'';position:absolute;inset:8px;border:1px solid var(--border-light);pointer-events:none}
-.fam-role-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:.05em;color:var(--sage);display:block;margin-bottom:12px}
-.fam-name{font-family:'Great Vibes',cursive;font-size:26px;color:var(--dark);line-height:1.3;display:block}
-.fam-and{display:flex;align-items:center;gap:8px;margin:6px 0}
-.fam-and-line{flex:1;height:1px;background:var(--border)}
+.fam-role-lbl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:.05em;color:var(--sage);display:block;margin-bottom:18px}
+.fam-name{font-family:'Great Vibes',cursive;font-size:26px;color:var(--dark);line-height:1.25;display:block;min-height:65px;display:flex;align-items:center;justify-content:center}
+.fam-and{display:flex;align-items:center;gap:8px;margin:14px 0;width:80%}
+.fam-and-line{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(124,94,42,.45),transparent)}
 .fam-and-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--accent)}
 
 /* ── PADRINOS ── */
@@ -203,15 +203,22 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 /* ── ITINERARIO V3 — Centered Glowing Timeline ── */
 #siti{overflow:visible;padding-left:24px;padding-right:24px}
 .itv3{position:relative;display:flex;flex-direction:column;align-items:center;padding:10px 0 10px;margin-top:24px}
-.itv3-track{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:1px;z-index:0;background:linear-gradient(to bottom,transparent 0%,rgba(164,133,81,.35) 10%,rgba(164,133,81,.25) 45%,rgba(164,133,81,.30) 80%,transparent 100%)}
-.itv3-glow{position:absolute;left:50%;transform:translateX(-50%);top:0;width:5px;height:110px;background:linear-gradient(to bottom,transparent,rgba(164,133,81,.55) 20%,rgba(164,133,81,.88) 50%,rgba(164,133,81,.55) 80%,transparent);filter:blur(3px);border-radius:6px;z-index:1;pointer-events:none}
+/* Track triple: navy edge → gold middle → wine center → gold → navy */
+.itv3-track{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:1.5px;z-index:0;background:linear-gradient(to bottom,transparent 0%,rgba(7,21,54,.32) 8%,rgba(124,94,42,.55) 25%,rgba(59,7,7,.45) 50%,rgba(124,94,42,.55) 75%,rgba(7,21,54,.32) 92%,transparent 100%);box-shadow:0 0 6px rgba(212,170,90,.25)}
+/* Glow dorado intenso (resplandor de oro pulido al scroll) */
+.itv3-glow{position:absolute;left:50%;transform:translateX(-50%);top:0;width:6px;height:130px;background:linear-gradient(to bottom,transparent 0%,rgba(255,231,166,.4) 12%,rgba(244,217,138,.9) 30%,#F4D98A 50%,rgba(244,217,138,.9) 70%,rgba(255,231,166,.4) 88%,transparent 100%);filter:blur(3px) drop-shadow(0 0 10px rgba(244,217,138,.85)) drop-shadow(0 0 20px rgba(212,170,90,.6));border-radius:8px;z-index:1;pointer-events:none}
+.itv3-glow::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,rgba(255,243,198,.95) 0%,rgba(244,217,138,.55) 40%,transparent 75%);filter:blur(2px);animation:itvPulse 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes itvPulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.45)}}
 .itv3-item{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 16px 4px;width:100%}
-.itv3-gem{width:9px;height:9px;background:linear-gradient(135deg,#F2E1B7 30%,#7C5E2A);transform:rotate(45deg);border-radius:2px;box-shadow:0 0 0 4px rgba(164,133,81,.14),0 0 18px rgba(164,133,81,.48);margin-bottom:18px;flex-shrink:0}
-.itv3-gem-sage{background:linear-gradient(135deg,#CCBB99 30%,#3B0707);box-shadow:0 0 0 4px rgba(164,133,81,.14),0 0 18px rgba(164,133,81,.45)}
-.itv3-gem-mid{background:linear-gradient(135deg,#CCBB99 30%,#7C5E2A);box-shadow:0 0 0 4px rgba(164,133,81,.10),0 0 18px rgba(164,133,81,.38)}
+
+/* 3 variantes de gem — patrón simétrico ORO → NAVY → WINE → NAVY → ORO */
+.itv3-gem{width:11px;height:11px;transform:rotate(45deg);border-radius:2px;margin-bottom:18px;flex-shrink:0;position:relative;background:linear-gradient(135deg,#FFE7A6 0%,#F4D98A 30%,#A57B2E 65%,#7C5E2A 100%);box-shadow:0 0 0 3px rgba(124,94,42,.14),0 0 0 6px rgba(212,170,90,.08),0 0 18px rgba(244,217,138,.75),0 0 30px rgba(212,170,90,.45),inset 1px 1px 2px rgba(255,243,198,.7)}
+.itv3-gem-navy{background:linear-gradient(135deg,#3556A0 0%,#1A2E5A 35%,#0E1F46 65%,#071536 100%);box-shadow:0 0 0 3px rgba(7,21,54,.18),0 0 0 6px rgba(124,94,42,.10),0 0 18px rgba(53,86,160,.55),0 0 28px rgba(7,21,54,.45),inset 1px 1px 2px rgba(204,187,153,.4)}
+.itv3-gem-wine{background:linear-gradient(135deg,#B0382A 0%,#7A1F18 40%,#3B0707 75%,#280505 100%);box-shadow:0 0 0 3px rgba(59,7,7,.18),0 0 0 6px rgba(212,170,90,.12),0 0 18px rgba(176,56,42,.55),0 0 30px rgba(59,7,7,.45),inset 1px 1px 2px rgba(244,217,138,.5)}
+
 .itv3-time{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;letter-spacing:8px;color:var(--dark);line-height:1;margin-bottom:6px;text-indent:8px}
 .itv3-ev{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(42,16,24,.55);letter-spacing:3px;text-transform:uppercase;line-height:1.5;text-indent:3px}
-.itv3-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--gold);opacity:.75;letter-spacing:1px;margin-top:4px;line-height:1.4}
+.itv3-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--gold);opacity:.85;letter-spacing:1px;margin-top:4px;line-height:1.4}
 .itv3-item:last-child{padding-bottom:10px}
 
 /* ── GALERÍA — RUEDA 3D (estilo veronica-andres) ── */
@@ -448,15 +455,13 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
         <span class="fam-role-lbl">Familia de la Novia</span>
         <span class="fam-name">Omar Sánchez<br>Vargas</span>
         <div class="fam-and"><div class="fam-and-line"></div><span class="fam-and-txt">y</span><div class="fam-and-line"></div></div>
-        <span class="fam-name" style="font-size:17px">Rosalía Zúñiga<br>Rodríguez</span>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:13px;color:var(--gold);margin-top:8px">Padres de la novia</p>
+        <span class="fam-name">Rosalía Zúñiga<br>Rodríguez</span>
       </div>
       <div class="fam-card">
         <span class="fam-role-lbl">Familia del Novio</span>
         <span class="fam-name">A. Alberto Vargas<br>Gutiérrez</span>
         <div class="fam-and"><div class="fam-and-line"></div><span class="fam-and-txt">y</span><div class="fam-and-line"></div></div>
         <span class="fam-name">Rosalina Godínez<br>González</span>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:13px;color:var(--gold);margin-top:8px">Padres del novio</p>
       </div>
     </div>
 
@@ -532,18 +537,18 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
         <div class="itv3-sub">Rectoría de la Visitación</div>
       </div>
       <div class="itv3-item">
-        <div class="itv3-gem itv3-gem-sage"></div>
+        <div class="itv3-gem itv3-gem-navy"></div>
         <div class="itv3-time">7:40 p.m.</div>
         <div class="itv3-ev">Recepción</div>
         <div class="itv3-sub">Salón Isabela Dreams</div>
       </div>
       <div class="itv3-item">
-        <div class="itv3-gem itv3-gem-mid"></div>
+        <div class="itv3-gem itv3-gem-wine"></div>
         <div class="itv3-time">8:20 p.m.</div>
         <div class="itv3-ev">Brindis</div>
       </div>
       <div class="itv3-item">
-        <div class="itv3-gem itv3-gem-sage"></div>
+        <div class="itv3-gem itv3-gem-navy"></div>
         <div class="itv3-time">8:40 p.m.</div>
         <div class="itv3-ev">Cena</div>
       </div>
