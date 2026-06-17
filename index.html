@@ -26,9 +26,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FDF1D3;
-  --surface:#F2E1B7;
-  --card:#FFF8E2;
+  --bg:#FBF9F4;
+  --surface:#F4F0E8;
+  --card:#FFFFFF;
   --accent:#7C5E2A;
   --dark:#071536;
   --sage:#7C5E2A;
@@ -36,8 +36,8 @@
   --wine:#3B0707;
   --brown:#3B0707;
   --gold:#7C5E2A;
-  --gold-light:#CCBB99;
-  --blush:#CCBB99;
+  --gold-light:#D8C9A8;
+  --blush:#D8C9A8;
   --border:rgba(7,21,54,.20);
   --border-light:rgba(7,21,54,.10);
 }
@@ -251,13 +251,14 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 /* ── DRESS CODE ── */
 .dc-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--text);text-align:center;line-height:1.75;margin-bottom:24px;font-weight:400}
 .dc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.dc-col{background:linear-gradient(160deg,rgba(164,133,81,.13) 0%,rgba(7,21,54,.07) 100%);border:1px solid rgba(164,133,81,.22);border-radius:10px;padding:28px 14px 20px;text-align:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);position:relative;overflow:hidden}
+.dc-col{background:linear-gradient(160deg,rgba(164,133,81,.10) 0%,rgba(7,21,54,.05) 100%);border:1px solid rgba(164,133,81,.22);border-radius:10px;padding:24px 14px 18px;text-align:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-height:300px}
 .dc-col::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(232,210,164,.18) 0%,transparent 70%);pointer-events:none}
-.dc-col-ttl{font-family:'Italiana',serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--dark);margin-top:14px;opacity:.85}
+.dc-illustration{height:200px;width:auto;display:block;margin:0 auto;filter:drop-shadow(0 8px 14px rgba(7,21,54,.18))}
+.dc-col-ttl{font-family:'Italiana',serif;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--dark);margin-top:18px;opacity:.85}
 
 /* ── REGALOS ── */
-#regalos{background:linear-gradient(155deg,#3B0707 0%,#5A1A12 50%,#3B0707 100%);position:relative}
-#regalos::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,170,90,.15) 0%,transparent 70%);pointer-events:none}
+#regalos{background:linear-gradient(155deg,#071536 0%,#1A2E5A 50%,#071536 100%);position:relative}
+#regalos::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,170,90,.18) 0%,transparent 70%);pointer-events:none}
 #regalos .eyebrow{color:var(--blush);opacity:.85}
 #regalos .heading{color:#E8D2A4}
 #regalos .sub{color:rgba(164,133,81,.75)}
@@ -304,12 +305,12 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .rsvp-toggle-btn{flex:1;padding:14px 8px;border-radius:4px;border:1px solid var(--border);background:var(--bg);cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);transition:all .25s}
 .rsvp-toggle-btn.selected-yes{background:rgba(164,133,81,.12);border-color:var(--accent);color:var(--accent)}
 .rsvp-toggle-btn.selected-no{background:rgba(107,100,80,.08);border-color:var(--gold);color:var(--gold)}
-.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:8px;background:linear-gradient(135deg,#3B0707 0%,#5A1A12 50%,#3B0707 100%);color:#FDF1D3;border:1px solid rgba(212,170,90,.4);cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;letter-spacing:.05em;padding:17px 24px;border-radius:50px;transition:all .3s;box-shadow:0 6px 20px rgba(59,7,7,.35),inset 0 1px 0 rgba(212,170,90,.18)}
-.btn-wa:hover{background:linear-gradient(135deg,#5A1A12 0%,#7A2A20 50%,#5A1A12 100%);box-shadow:0 8px 26px rgba(59,7,7,.45),inset 0 1px 0 rgba(212,170,90,.28)}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:8px;background:linear-gradient(135deg,#071536 0%,#1A2E5A 50%,#071536 100%);color:#FBF9F4;border:1px solid rgba(212,170,90,.4);cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;letter-spacing:.05em;padding:17px 24px;border-radius:50px;transition:all .3s;box-shadow:0 6px 20px rgba(7,21,54,.35),inset 0 1px 0 rgba(212,170,90,.18)}
+.btn-wa:hover{background:linear-gradient(135deg,#1A2E5A 0%,#2E4778 50%,#1A2E5A 100%);box-shadow:0 8px 26px rgba(7,21,54,.45),inset 0 1px 0 rgba(212,170,90,.28)}
 .btn-wa svg{width:20px;height:20px;fill:currentColor;flex-shrink:0}
 
 /* ── FOOTER ── */
-#footer{padding:64px 32px 48px;text-align:center;background:linear-gradient(180deg,#3B0707 0%,#280505 100%);position:relative}
+#footer{padding:64px 32px 48px;text-align:center;background:linear-gradient(180deg,#071536 0%,#04081E 100%);position:relative}
 .footer-names{font-family:'Great Vibes',cursive;font-size:52px;color:rgba(246,238,224,.9)}
 .footer-date{font-family:'Italiana',serif;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:rgba(164,133,81,.55);margin-top:12px}
 .footer-hr{width:40px;height:1px;background:var(--gold);margin:24px auto 16px;opacity:.25}
@@ -320,7 +321,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .sec::before,.sec::after,.sec-sm::before,.sec-sm::after{content:'';position:absolute;left:0;right:0;height:90px;pointer-events:none;z-index:4}
 .sec::before,.sec-sm::before{top:0;background:none}
 .sec::after,.sec-sm::after{bottom:0;background:none}
-#cd-section{background:#F4E4C5}
+#cd-section{background:#F4F0E8}
 #cd-section::before{height:200px;background:linear-gradient(to bottom,var(--bg) 0%,transparent 100%)}
 #cd-section::after{height:200px;background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
 /* hero bottom */
@@ -403,16 +404,12 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <span class="eyebrow">Con la gracia de Dios</span>
     <div class="orn"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <h1 class="heading">Diana y Darwin</h1>
-    <p class="sub" id="invHonorTxt" style="margin-top:8px;font-weight:600;color:var(--brown)">Tienen el honor de invitarte a<br>su boda religiosa</p>
+    <p class="sub" id="invHonorTxt" style="margin-top:8px;font-weight:600;color:var(--brown)">Tenemos el honor de invitarte a<br>nuestra boda</p>
     <div class="orn bot"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);line-height:1.9;margin-top:26px;font-weight:400">
       Sábado, 24 de Octubre de 2026<br>
       <strong style="font-weight:600;color:var(--dark)">Morelia, Michoacán</strong>
     </p>
-    <div style="margin:28px auto 0;max-width:340px;padding:24px 22px;background:linear-gradient(160deg,rgba(59,7,7,.06) 0%,rgba(90,26,18,.04) 100%);border:1px solid rgba(59,7,7,.25);border-radius:6px;position:relative">
-      <span style="position:absolute;top:-1px;left:50%;transform:translateX(-50%) translateY(-50%);background:var(--bg);padding:0 12px;font-family:'Italiana',serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#3B0707;font-weight:600">✦ Mateo 19:6 ✦</span>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:#3B0707;line-height:1.75;font-weight:500;text-align:center;margin:0">«Así que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre.»</p>
-    </div>
     <div id="inv-photo-wrap">
       <img id="inv-photo" src="inv.jpeg" alt="Diana y Darwin">
       <div class="inv-frame" aria-hidden="true">
@@ -479,7 +476,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <div class="card rv" style="max-width:380px;margin:0 auto;padding:28px 24px">
       <div class="padrino-list">
         <div class="padrino-row">
-          <span class="padrino-role"><svg width="13" height="13" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:5px;opacity:.75"><circle cx="7" cy="7" r="5.5"/><circle cx="15" cy="7" r="5.5"/></svg>Padrinos de la Boda</span>
+          <span class="padrino-role"><svg width="11" height="13" viewBox="0 0 18 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:5px;opacity:.75"><rect x="5" y="10" width="8" height="10" rx="1.5"/><line x1="9" y1="10" x2="9" y2="7"/><path d="M9 4C9 4 7 6 7 7.2C7 8.2 7.9 9 9 9C10.1 9 11 8.2 11 7.2C11 6 9 4 9 4Z" fill="currentColor" opacity=".4"/></svg>Padrinos de Velación</span>
           <span class="padrino-names">Nayeli Zúñiga Gil<br>y José Martín Alonso Anguiano</span>
         </div>
       </div>
@@ -576,23 +573,11 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <p class="dc-text" style="margin-top:22px">Una velada de gala.<br>Te invitamos a vestir tu mejor atuendo formal para celebrar con nosotros.</p>
     <div class="dc-cols rv">
       <div class="dc-col">
-        <svg viewBox="0 0 64 80" width="64" height="80" fill="none">
-          <circle cx="32" cy="12" r="9" stroke="#A48551" stroke-width="1.5"/>
-          <path d="M22 21L32 27L42 21" stroke="#A48551" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M32 27L30 38L32 43L34 38Z" fill="rgba(164,133,81,.18)" stroke="#7C5E2A" stroke-width="1.1"/>
-          <path d="M22 21L14 36L16 58L32 54" stroke="#3B0707" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M42 21L50 36L48 58L32 54" stroke="#3B0707" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 58L18 78M48 58L46 78" stroke="#3B0707" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <img src="dress-caballero.png" alt="Esmoquin formal caballero" class="dc-illustration" width="160" height="280" loading="lazy">
         <div class="dc-col-ttl">Caballeros</div>
       </div>
       <div class="dc-col">
-        <svg viewBox="0 0 64 80" width="64" height="80" fill="none">
-          <circle cx="32" cy="11" r="9" stroke="#A48551" stroke-width="1.5"/>
-          <path d="M23 8 Q26 2 32 3 Q38 2 41 8" stroke="#A48551" stroke-width="1.3" fill="rgba(164,133,81,.1)" stroke-linecap="round"/>
-          <path d="M23 22Q20 28 20 34L16 58L48 58L44 34Q44 28 41 22Z" fill="rgba(204,187,153,.1)" stroke="#7C5E2A" stroke-width="1.3" stroke-linejoin="round"/>
-          <path d="M16 58Q12 72 32 76Q52 72 48 58Z" fill="rgba(204,187,153,.14)" stroke="#7C5E2A" stroke-width="1.3"/>
-        </svg>
+        <img src="dress-dama.png" alt="Vestido formal dama" class="dc-illustration" width="160" height="280" loading="lazy">
         <div class="dc-col-ttl">Damas</div>
       </div>
     </div>
@@ -608,36 +593,45 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 
   <!-- MESA DE REGALOS -->
   <section id="regalos" class="sec rv" style="text-align:center">
-    <span class="eyebrow">Mesa de Regalos</span>
-    <h2 class="heading" style="color:#E8D2A4">Un Obsequio</h2>
-    <div class="orn" style="margin-top:16px"><div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(204,187,153,.3),transparent)"></div><div class="orn-diamond-sm" style="background:#E8D2A4"></div><div class="orn-diamond" style="background:#E8D2A4"></div><div class="orn-diamond-sm" style="background:#E8D2A4"></div><div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(204,187,153,.3),transparent)"></div></div>
-    <p class="gift-msg rv">Tu presencia es nuestro regalo más preciado.<br>Si deseas honrarnos con un obsequio,<br>con infinita gratitud lo recibimos.</p>
+    <span class="eyebrow">Un Detalle de Cariño</span>
+    <h2 class="heading" style="color:#E8D2A4">Mesa de Regalos</h2>
+    <div class="orn" style="margin-top:16px"><div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(216,201,168,.3),transparent)"></div><div class="orn-diamond-sm" style="background:#E8D2A4"></div><div class="orn-diamond" style="background:#E8D2A4"></div><div class="orn-diamond-sm" style="background:#E8D2A4"></div><div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(216,201,168,.3),transparent)"></div></div>
+    <p class="gift-msg rv">El mejor regalo para nosotros es tu compañía en este día tan especial,<br>pero si en tu intención está darnos un presente te dejamos estas opciones:</p>
     <div class="gift-opts rv">
+      <div class="gift-opt" style="text-align:center">
+        <span class="gift-bank-lbl">Titular</span>
+        <span class="gift-bank-name">Alberto Darwin Vargas Godínez</span>
+        <!-- Cuenta -->
+        <div style="margin-top:10px;padding:12px 14px;background:rgba(255,243,198,.08);border:1px solid rgba(212,170,90,.35);border-radius:6px">
+          <span style="font-family:'Italiana',serif;font-size:11px;letter-spacing:.28em;color:#E8D2A4;display:block;margin-bottom:4px">Cuenta</span>
+          <span class="copy-num" data-num="1531974774" style="font-family:'Cormorant Garamond','Courier New',monospace;font-variant-numeric:tabular-nums;font-weight:600;font-size:20px;letter-spacing:.14em;color:#F4D98A;text-shadow:0 1px 4px rgba(0,0,0,.4);-webkit-text-fill-color:#F4D98A">153 197 4774</span>
+        </div>
+        <!-- Tarjeta -->
+        <div style="margin-top:10px;padding:12px 14px;background:rgba(255,243,198,.08);border:1px solid rgba(212,170,90,.35);border-radius:6px">
+          <span style="font-family:'Italiana',serif;font-size:11px;letter-spacing:.28em;color:#E8D2A4;display:block;margin-bottom:4px">No. de Tarjeta</span>
+          <span class="copy-num" data-num="4152314222417860" style="font-family:'Cormorant Garamond','Courier New',monospace;font-variant-numeric:tabular-nums;font-weight:600;font-size:18px;letter-spacing:.12em;color:#F4D98A;text-shadow:0 1px 4px rgba(0,0,0,.4);-webkit-text-fill-color:#F4D98A">4152 3142 2241 7860</span>
+        </div>
+        <!-- CLABE -->
+        <div style="margin-top:10px;padding:12px 14px;background:rgba(255,243,198,.08);border:1px solid rgba(212,170,90,.35);border-radius:6px">
+          <span style="font-family:'Italiana',serif;font-size:11px;letter-spacing:.28em;color:#E8D2A4;display:block;margin-bottom:4px">CLABE</span>
+          <span id="clabeNum" class="copy-num" data-num="012470015319747748" style="font-family:'Cormorant Garamond','Courier New',monospace;font-variant-numeric:tabular-nums;font-weight:600;font-size:18px;letter-spacing:.10em;color:#F4D98A;text-shadow:0 1px 4px rgba(0,0,0,.4);-webkit-text-fill-color:#F4D98A">012 470 01531974774 8</span>
+        </div>
+        <button type="button" class="btn-gift" id="copyClabeBtn" style="border:none;cursor:pointer;font-family:'Italiana',serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;margin-top:14px">
+          <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          Copiar CLABE
+        </button>
+      </div>
       <div class="gift-opt">
+        <span class="gift-bank-lbl">O en nuestra mesa de regalos</span>
         <span class="gift-bank-name">Liverpool</span>
         <div class="gift-detail">
-          <strong>Diana &amp; Darwin</strong><br>
-          Núm. de evento 51897485
+          Número de mesa<br>
+          <strong style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;letter-spacing:.15em;color:#F4D98A;-webkit-text-fill-color:#F4D98A">51897485</strong>
         </div>
         <a class="btn-gift" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51897485" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
           Ver Mesa de Regalos
         </a>
-      </div>
-      <div class="gift-opt">
-        <span class="gift-bank-lbl">Lluvia de Sobres</span>
-        <span class="gift-bank-name">BBVA</span>
-        <div class="gift-detail">
-          <strong>Alberto Darwin Vargas Godínez</strong>
-          <div style="margin-top:12px;padding:10px 14px;background:rgba(255,243,198,.08);border:1px solid rgba(212,170,90,.35);border-radius:6px;display:inline-block">
-            <span style="font-family:'Italiana',serif;font-size:11px;letter-spacing:.28em;color:#E8D2A4;display:block;margin-bottom:4px">CLABE</span>
-            <span id="clabeNum" style="font-family:'Cormorant Garamond','Courier New',monospace;font-variant-numeric:tabular-nums;font-weight:600;font-size:22px;letter-spacing:.14em;color:#F4D98A;text-shadow:0 1px 4px rgba(0,0,0,.4);-webkit-text-fill-color:#F4D98A">1531974774</span>
-          </div>
-        </div>
-        <button type="button" class="btn-gift" id="copyClabeBtn" style="border:none;cursor:pointer;font-family:'Italiana',serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase">
-          <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-          Copiar CLABE
-        </button>
       </div>
     </div>
   </section>
@@ -909,12 +903,13 @@ function initMain(){
     btnRsvp.addEventListener('click',function(){window.open(waUrl,'_blank');});
   }
 
-  /* Copiar CLABE al portapapeles */
+  /* Copiar CLABE al portapapeles (usa data-num sin espacios) */
   var btnCopyClabe=document.getElementById('copyClabeBtn');
   var toast=document.getElementById('copyToast');
   if(btnCopyClabe){
     btnCopyClabe.addEventListener('click',function(){
-      var clabe=document.getElementById('clabeNum').textContent.trim();
+      var el=document.getElementById('clabeNum');
+      var clabe=el.getAttribute('data-num')||el.textContent.replace(/\s+/g,'');
       var done=function(){
         if(toast){toast.classList.add('show');setTimeout(function(){toast.classList.remove('show');},1700);}
       };
@@ -931,6 +926,18 @@ function initMain(){
       }
     });
   }
+
+  /* Click en cuenta o tarjeta también copia */
+  document.querySelectorAll('.copy-num').forEach(function(el){
+    el.style.cursor='pointer';
+    el.addEventListener('click',function(){
+      var num=el.getAttribute('data-num')||el.textContent.replace(/\s+/g,'');
+      var done=function(){if(toast){toast.classList.add('show');setTimeout(function(){toast.classList.remove('show');},1700);}};
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(num).then(done).catch(function(){});
+      }
+    });
+  });
 }
 
 /* ── ITINERARIO GLOW ── */
