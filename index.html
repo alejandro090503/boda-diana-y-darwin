@@ -237,9 +237,16 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
 .wheel-ring.dragging .wheel-card{cursor:grabbing}
 .wheel-card img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none}
 .gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;font-weight:600;letter-spacing:3px;color:var(--gold);text-align:center;margin-top:24px;opacity:.85;text-transform:uppercase}
-.album-qr{margin:36px auto 0;max-width:340px;text-align:center}
-.album-qr-img{width:min(180px,52vw);height:auto;border-radius:8px;border:1px solid var(--border);margin:14px auto;display:block}
-.album-qr-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--text);opacity:.8;line-height:1.75}
+.album-wrap{margin:36px auto 0;max-width:340px;text-align:center}
+.album-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--text);opacity:.85;line-height:1.7;margin-bottom:22px}
+.album-qr{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:20px}
+.album-qr-img{width:min(200px,56vw);height:auto;border-radius:8px;border:1px solid var(--border);display:block}
+.album-qr.bloqueado .album-qr-img{filter:blur(7px);opacity:.75}
+.album-qr.bloqueado .album-btn{pointer-events:none;opacity:.45}
+.album-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;background:var(--dark);color:#FDF1D3;text-decoration:none;font-family:'Italiana',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;padding:14px 28px;border-radius:50px;transition:background .3s}
+.album-btn:hover{background:var(--accent)}
+.album-aviso{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--text);opacity:.8;line-height:1.7;margin-top:22px}
+.album-qr:not(.bloqueado) + .album-aviso{display:none}
 
 /* ── LIGHTBOX ── */
 #lightbox{position:fixed;inset:0;z-index:9990;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(1,4,14,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;cursor:zoom-out}
@@ -688,7 +695,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
   <!-- ÁLBUM -->
   <section id="salbum" class="sec" style="text-align:center">
     <span class="eyebrow rv" style="color:var(--sage)">Nuestros Momentos</span>
-    <h2 class="heading-sm rv">Álbum</h2>
+    <h2 class="heading-sm rv">Álbum de fotos</h2>
     <div class="orn rv" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <div class="wheel-scene rv" id="wheel-scene">
       <div class="wheel-ring" id="wheel-ring">
@@ -701,10 +708,25 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
       </div>
     </div>
     <p class="gal-hint rv">Arrastra para girar</p>
-    <div class="album-qr rv">
-      <img class="album-qr-img" src="qr-album.png" alt="QR álbum compartido" onerror="this.style.display='none'">
-      <p style="font-family:'Italiana',serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:6px">@elysium.invitaciones</p>
+    <div class="album-wrap rv">
+      <p class="album-txt">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
+      <!-- Álbum de Elysium: el QR abre /album → panel-invitados.vercel.app/subir/diana-y-darwin -->
+      <div class="album-qr" data-fecha="2026-10-24">
+        <img class="album-qr-img" src="qr-album.png" alt="Código QR del álbum de fotos" width="200" height="200">
+        <a class="album-btn" href="/album">Subir mis fotos</a>
+      </div>
+      <p class="album-aviso">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la noche ✨</p>
     </div>
+    <script>
+      /* Se desbloquea solo el día del evento (la base además rechaza fotos antes de tiempo) */
+      (function(){
+        var box = document.querySelector('.album-qr');
+        if(!box) return;
+        var p = box.dataset.fecha.split('-');
+        var abre = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0);
+        if(new Date() < abre) box.classList.add('bloqueado');
+      })();
+    </script>
   </section>
 
   <!-- RSVP -->
